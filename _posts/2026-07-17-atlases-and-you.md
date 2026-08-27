@@ -2,10 +2,7 @@
 layout: bare
 title: "the memoryleak zone : atlases and you!"
 desc: "a tiny rant about how i'm bad at programming"
-permalink: /pages/blog/atlases-and-you.html
 ---
-
-[back to blog](/pages/blog)
 
 # atlases and you! (i hate defining formats)
 

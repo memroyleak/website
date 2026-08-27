@@ -5,6 +5,7 @@
   </head>
   <body>
     <div class="text{% if page.collection == 'posts' %} wide{% endif %}">
+      {% if page.collection == 'posts' %}<p><a href="/pages/blog">back to blog</a></p>{% endif %}
       {{ content }}
     </div>
   </body>
