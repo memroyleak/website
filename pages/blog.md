@@ -11,7 +11,7 @@ permalink: /pages/blog/
 i ramble a lot here.
 
 {% for post in site.posts %}
-<a href="{{ post.url }}" style="font-weight: Bold; font-size: 24px;">{{ post.title }} ({{ post.date | date: "%-m/%-d/%Y" }})</a>
+<a href="{{ post.url }}" style="font-weight: Bold; font-size: 24px;">{{ post.title | remove: "the memoryleak zone : " }} ({{ post.date | date: "%-m/%-d/%Y" }})</a>
 
 {{ post.desc }}
 
