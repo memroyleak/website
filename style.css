@@ -1,0 +1,162 @@
+@font-face {
+  font-family: "New York";
+  src: url("fonts/NewYork.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Consolas";
+  src: url("fonts/CONSOLA.TTF") format("truetype");
+}
+
+@font-face {
+  font-family: "Determination";
+  src: url("fonts/DeterminationMonoWeb.woff") format("woff");
+}
+
+img {
+  float: none;
+  display: block;
+  width: 45%;
+  height: auto;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: stretch;
+}
+
+figcaption {
+  font-family: "Determination";
+  font-size: 25pt;
+  color: white;
+  -webkit-text-stroke: 4px black;
+  paint-order: stroke fill;
+}
+
+a {
+  color: white;
+}
+
+marquee {
+	display: inline-block;
+	width: -webkit-fill-available;
+	height: auto;
+}
+
+marquee img {
+	text-align: center;
+	display: inline-block;
+}
+
+html {
+  background: 
+    repeating-conic-gradient(#ffffff 0 25%, #ff9cb6 0 50%) 
+      0px 0px / 90px 90px;
+      
+  animation: moveGrid 2s linear infinite;
+}
+
+@keyframes moveGrid {
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    background-position: 90px 90px; 
+  }
+}
+
+.text {
+  margin: 80px;
+  margin-left: 100px;
+  margin-right: 100px;
+  padding: 60px;
+  background-color: black;
+  outline: 10px;
+  outline-color: white;
+  outline-style: solid;
+  font-family: "Determination";
+  font-style: normal;
+  font-size: 25px;
+  color: white;
+  flex: 2;
+}
+
+.text img {
+  outline: 10px;
+  outline-color: white;
+  outline-style: solid;
+}
+
+.me {
+  height: auto;
+  margin-top: 10px;
+  flex: 1.6;
+}
+
+.content {
+  display: flex;
+  gap: 0px;
+}
+
+.navbar {
+  padding: 10px;
+  color: white;
+  font-family: "Determination";
+  font-size: 23px;
+}
+
+.navbar ul {
+  background-color: black;
+  outline: 10px;
+  outline-color: white;
+  outline-style: solid;
+  list-style: none;
+  margin: 0 auto;
+  padding: 10px;
+  gap: 10px;
+  display: flex;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.scroller {
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.inner {
+  display: inline-flex;
+  width: max-content;
+  white-space: nowrap;
+  animation: scroll_text 15s linear infinite;
+}
+
+.inner h1 {
+  display: inline-block;
+  padding-right: 0%;
+}
+
+@keyframes scroll_text {
+  0% {
+    transform: translateX(100vw);
+  }
+  100% {
+    transform: translateX(-150vw);
+  }
+}
