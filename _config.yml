@@ -1,0 +1,14 @@
+title: the memoryleak zone
+description: memoryleak's personal corner of the internet
+url: ""
+baseurl: ""
+markdown: kramdown
+
+collections:
+  posts:
+    permalink: /pages/blog/:slug.html
+
+exclude:
+  - .opencode
+  - Gemfile
+  - Gemfile.lock

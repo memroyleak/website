@@ -1,0 +1,9 @@
+<nav class="navbar">
+  <ul>
+    <li>{% unless page.active == 'home' %}<a href="/">home</a>{% else %}home{% endunless %}</li>
+    <li>{% unless page.active == 'about' %}<a href="/pages/about">about</a>{% else %}about{% endunless %}</li>
+    <li>{% unless page.active == 'music' %}<a href="/pages/music">music</a>{% else %}music{% endunless %}</li>
+    <li>{% unless page.active == 'projects' %}<a href="/pages/projects">projects</a>{% else %}projects{% endunless %}</li>
+    <li>{% unless page.active == 'blog' %}<a href="/pages/blog">blog</a>{% else %}blog{% endunless %}</li>
+  </ul>
+</nav>
