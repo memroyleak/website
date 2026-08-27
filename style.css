@@ -165,3 +165,37 @@ html {
     transform: translateX(-150vw);
   }
 }
+
+@media (max-width: 768px) {
+  .text {
+    margin: 20px;
+    padding: 20px;
+    font-size: 18px;
+  }
+
+  .text.wide {
+    margin: 20px;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .me {
+    display: none;
+  }
+
+  .navbar ul {
+    flex-wrap: wrap;
+    font-size: 18px;
+    gap: 6px;
+  }
+
+  figcaption {
+    font-size: 18px;
+  }
+
+  img {
+    width: 70%;
+  }
+}
