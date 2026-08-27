@@ -9,6 +9,5 @@ collections:
     permalink: /pages/blog/:slug.html
 
 exclude:
-  - .opencode
   - Gemfile
   - Gemfile.lock
