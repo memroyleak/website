@@ -88,6 +88,11 @@ html {
   flex: 2;
 }
 
+.text.wide {
+  margin-left: 160px;
+  margin-right: 160px;
+}
+
 .text img {
   outline: 10px;
   outline-color: white;

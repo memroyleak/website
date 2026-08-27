@@ -5,8 +5,11 @@
   </head>
   <body>
     {% include navbar.html %}
-    <div class="text">
-      {{ content }}
+    <div class="content">
+      <div class="text">
+        {{ content }}
+      </div>
+      {% include me.html %}
     </div>
   </body>
 </html>

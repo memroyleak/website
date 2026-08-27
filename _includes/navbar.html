@@ -1,9 +1,17 @@
 <nav class="navbar">
   <ul>
-    <li>{% unless page.active == 'home' %}<a href="/">home</a>{% else %}home{% endunless %}</li>
-    <li>{% unless page.active == 'about' %}<a href="/pages/about">about</a>{% else %}about{% endunless %}</li>
-    <li>{% unless page.active == 'music' %}<a href="/pages/music">music</a>{% else %}music{% endunless %}</li>
-    <li>{% unless page.active == 'projects' %}<a href="/pages/projects">projects</a>{% else %}projects{% endunless %}</li>
-    <li>{% unless page.active == 'blog' %}<a href="/pages/blog">blog</a>{% else %}blog{% endunless %}</li>
+    {% assign here = page.url %}
+    {% assign nav = site.pages | where_exp: "p", "p.nav_order" | sort: "nav_order" %}
+    {% for p in nav %}
+      {% assign url = p.url %}
+      {% assign is_active = false %}
+      {% if url == "/" %}
+        {% if here == "/" %}{% assign is_active = true %}{% endif %}
+      {% else %}
+        {% assign section = url | remove_first: "/" | remove_last: "/" %}
+        {% if here contains section %}{% assign is_active = true %}{% endif %}
+      {% endif %}
+      <li>{% if is_active %}{{ p.nav_title }}{% else %}<a href="{{ url }}">{{ p.nav_title }}</a>{% endif %}</li>
+    {% endfor %}
   </ul>
 </nav>
