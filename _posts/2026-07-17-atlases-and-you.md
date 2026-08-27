@@ -28,4 +28,4 @@ this library is **extremely obtuse.** the documentation is also kinda shit, too.
 
 at this current moment, i literally don't know what to do and am at a loss. i tried using XML, got confused and left it there. but i guess with enough head banging against wall i'll get it to work :D (this is a joke!!!!)
 
-- memoryleak
+\- memoryleak
