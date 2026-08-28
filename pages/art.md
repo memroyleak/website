@@ -1,6 +1,6 @@
 ---
 layout: bare
-title: "the memoryleak zone : art"
+title: "art"
 permalink: /pages/art/
 ---
 

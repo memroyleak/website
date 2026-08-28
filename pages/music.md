@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "the memoryleak zone : music"
+title: "music"
 nav_title: music
 nav_order: 3
 permalink: /pages/music/

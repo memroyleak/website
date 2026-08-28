@@ -1,6 +1,6 @@
 ---
 layout: bare
-title: "the memoryleak zone : atlases and you!"
+title: "atlases and you!"
 desc: "a tiny rant about how i'm bad at programming"
 ---
 

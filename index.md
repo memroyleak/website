@@ -1,6 +1,5 @@
 ---
 layout: home
-title: "the memoryleak zone"
 nav_title: home
 nav_order: 1
 permalink: /

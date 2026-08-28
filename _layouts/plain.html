@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
+    <title>{{ site.title }}{% if page.title %} : {{ page.title }}{% endif %}</title>
     <link href="/style.css" rel="stylesheet" type="text/css" media="all">
     <link rel="icon" href="/icon.png" type="image/png">
   </head>

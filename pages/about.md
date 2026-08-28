@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "the memoryleak zone : about"
+title: "about"
 nav_title: about
 nav_order: 2
 permalink: /pages/about/

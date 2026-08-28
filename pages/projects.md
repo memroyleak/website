@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "the memoryleak zone : projects"
+title: "projects"
 nav_title: projects
 nav_order: 4
 permalink: /pages/projects/
