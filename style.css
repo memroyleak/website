@@ -1,16 +1,19 @@
 @font-face {
   font-family: "New York";
   src: url("fonts/NewYork.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Consolas";
   src: url("fonts/CONSOLA.TTF") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Determination";
   src: url("fonts/DeterminationMonoWeb.woff") format("woff");
+  font-display: swap;
 }
 
 img {

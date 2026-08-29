@@ -3,6 +3,9 @@
 <title>{{ site.title }}{% if page.title %} : {{ page.title }}{% endif %}</title>
 <link rel="stylesheet" href="/style.css">
 <link rel="icon" href="/icon.png" type="image/png">
+<link rel="preload" as="font" type="font/ttf" href="/fonts/NewYork.ttf" crossorigin>
+<link rel="preload" as="font" type="font/ttf" href="/fonts/CONSOLA.TTF" crossorigin>
+<link rel="preload" as="font" type="font/woff" href="/fonts/DeterminationMonoWeb.woff" crossorigin>
 <script>
   (function () {
     function notifyParent() {
@@ -16,5 +19,12 @@
       history[m] = function () { orig.apply(this, arguments); notifyParent(); };
     });
     new MutationObserver(notifyParent).observe(document.querySelector('title'), { childList: true });
+
+    function signalReady() { parent.postMessage({ type: 'frame-ready' }, '*'); }
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(signalReady);
+    } else {
+      window.addEventListener('load', signalReady);
+    }
   })();
 </script>
