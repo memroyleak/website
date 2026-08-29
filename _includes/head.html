@@ -6,25 +6,4 @@
 <link rel="preload" as="font" type="font/ttf" href="/fonts/NewYork.ttf" crossorigin>
 <link rel="preload" as="font" type="font/ttf" href="/fonts/CONSOLA.TTF" crossorigin>
 <link rel="preload" as="font" type="font/woff" href="/fonts/DeterminationMonoWeb.woff" crossorigin>
-<script>
-  (function () {
-    function notifyParent() {
-      parent.postMessage({ type: 'frame-url', href: location.href, title: document.title }, '*');
-    }
-    window.addEventListener('load', notifyParent);
-    window.addEventListener('popstate', notifyParent);
-    window.addEventListener('hashchange', notifyParent);
-    ['pushState', 'replaceState'].forEach(function (m) {
-      var orig = history[m];
-      history[m] = function () { orig.apply(this, arguments); notifyParent(); };
-    });
-    new MutationObserver(notifyParent).observe(document.querySelector('title'), { childList: true });
-
-    function signalReady() { parent.postMessage({ type: 'frame-ready' }, '*'); }
-    if (document.fonts && document.fonts.ready) {
-      document.fonts.ready.then(signalReady);
-    } else {
-      window.addEventListener('load', signalReady);
-    }
-  })();
-</script>
+<script src="/script.js" defer></script>
