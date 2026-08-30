@@ -2,13 +2,13 @@
 layout: default
 title: "music"
 nav_title: music
-nav_order: 3
+nav_order: 4
 permalink: /pages/music/
 ---
 
 # music
 
-### stuff from artists i like listening to
+stuff from artists i like listening to
 
 if you wanna see more stuff i like, check out my last.fm profile
 

@@ -2,6 +2,11 @@
 <html>
   <head>
     {% include head.html %}
+    {% if page.scripts %}
+      {% for script in page.scripts %}
+        <script src="{{ site.baseurl }}/scripts/{{ script }}.js"></script>
+      {% endfor %}
+    {% endif %}
   </head>
   <body>
     {% include navbar.html %}

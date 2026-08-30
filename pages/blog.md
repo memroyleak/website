@@ -2,7 +2,7 @@
 layout: default
 title: "blog"
 nav_title: blog
-nav_order: 5
+nav_order: 6
 permalink: /pages/blog/
 ---
 
