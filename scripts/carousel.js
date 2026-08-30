@@ -1,6 +1,23 @@
 let images = [];
 let currentIndex = 0;
 
+function preloadImages() {
+    const total = images.length;
+    const mid = Math.ceil(total / 2);
+    const order = [];
+
+    for (let i = 0; i < mid; i++) {
+        order.push(i);
+        const mirror = total - 1 - i;
+        if (mirror !== i) order.push(mirror);
+    }
+
+    order.forEach(index => {
+        const img = new Image();
+        img.src = images[index].src;
+    });
+}
+
 async function loadImages() {
     images = [];
 
@@ -23,6 +40,7 @@ async function loadImages() {
 
     currentIndex = 0;
     showImage();
+    preloadImages();
 }
 
 function showImage() {
