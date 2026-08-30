@@ -2,31 +2,19 @@ let images = [];
 let currentIndex = 0;
 
 async function loadImages() {
-    const folderUrl = "/images/art";
-
     images = [];
 
     try {
-        const response = await fetch(folderUrl);
+        const response = await fetch("/images/art/metadata.json");
 
         if (!response.ok) {
-            throw new Error(`Failed to get images from folder ${response.status}`);
+            throw new Error(`Failed to load image metadata: ${response.status}`);
         }
 
-        const html = await response.text();
-
-        const imageRegex = /href=["']([^"']+\.(jpg|jpeg|png|gif|webp|svg))["']/gi;
-
-        let match;
-
-        while ((match = imageRegex.exec(html)) != null) {
-            const file = match[1];
-            const separator = folderUrl.endsWith('/') ? '' : '/';
-            images.push(folderUrl + separator + file);
-        }
+        images = await response.json();
 
         if (images.length === 0) {
-            throw new Error('No images found in folder listing');
+            throw new Error('No images found in metadata');
         }
     } catch (error) {
         throw new Error(`Failed to get images: ${error.message}`);
@@ -45,14 +33,8 @@ function showImage() {
     const figure = document.createElement('figure');
     const img = document.createElement('img');
     const caption = document.createElement('figcaption');
-    img.src = images[currentIndex];
-
-    // bet you haven't seen worse javascript ever
-    let uri = new URL(img.src).pathname;
-    let withExt = decodeURI(uri).split('/').pop();
-    let filename = withExt.split('.')[0];
-    
-    caption.textContent = filename;
+    img.src = images[currentIndex].src;
+    caption.textContent = images[currentIndex].caption;
 
     figure.innerHTML = '';
     display.innerHTML = '';

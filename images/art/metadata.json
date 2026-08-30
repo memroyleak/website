@@ -1,0 +1,14 @@
+---
+permalink: /images/art/metadata.json
+---
+[
+  {% assign art_images = site.static_files | where_exp: "file", "file.path contains '/images/art/'" %}
+  {% for file in art_images %}
+    {% assign filename = file.path | split: "/" | last %}
+    {% assign caption = filename | split: "." | first %}
+    {
+      "src": "{{ file.path }}",
+      "caption": "{{ caption }}"
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
