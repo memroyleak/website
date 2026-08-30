@@ -46,7 +46,12 @@ function showImage() {
     const img = document.createElement('img');
     const caption = document.createElement('figcaption');
     img.src = images[currentIndex];
-    let filename = new URL(img.src).pathname.split('/').pop();
+
+    // bet you haven't seen worse javascript ever
+    let uri = new URL(img.src).pathname;
+    let withExt = decodeURI(uri).split('/').pop();
+    let filename = withExt.split('.')[0];
+    
     caption.textContent = filename;
 
     figure.innerHTML = '';
