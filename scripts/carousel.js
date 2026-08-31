@@ -38,7 +38,7 @@ async function loadImages() {
         return;
     }
 
-    currentIndex = 0;
+    currentIndex = Math.floor(Math.random() * images.length);
     showImage();
     preloadImages();
 }
